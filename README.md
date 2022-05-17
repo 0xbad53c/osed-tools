@@ -8,7 +8,7 @@ example without ASLR:
 python3 filter-ropfile.py rpppfile.txt --bad-bytes "\x00\x0a\x0d"
 ```
 
-With ASLR, specify the number of bad chars to disregard and the imagebase rp++ used:
+With ASLR, specify the number of hex chars of the address to disregard and the imagebase rp++ used:
 ```
 python3 filter-ropfile.py rpppfile.txt --bad-bytes "\x00\x0a\x0d" --aslr 4 --image-base 10000000
 ```
