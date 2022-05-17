@@ -13,6 +13,12 @@ With ASLR, specify the number of hex chars of the address to disregard and the i
 python3 filter-ropfile.py rpppfile.txt --bad-bytes "\x00\x0a\x0d" --aslr 4 --image-base 10000000
 ```
 
+# find-imagebase.py
+Tool to run on the same module as rp++ to find out which dll base address rp++ used in its output file. The output of this script can be used as --image-base for filter-ropfile.py. Run this on Windows to not violate exp-301 course policies.
+```
+python3 find-imagebase.py path-to-module
+```
+
 # dark-green-x64.wew
 Adapted version of the workspace from https://github.com/nextco/windbg-readable-theme to be more compatible with the Exp-301 course. Credits go to Nextco for developing the theme! 
 
