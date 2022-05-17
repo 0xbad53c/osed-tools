@@ -8,14 +8,6 @@ example without ASLR:
 python3 filter-ropfile.py rpppfile.txt --bad-bytes "\x00\x0a\x0d"
 ```
 
-parser = argparse.ArgumentParser(description='Filter rp++ output for high-quality gadgets')
-    parser.add_argument('srcfile',type=str, help='rp++ output file to ingest')
-    parser.add_argument('--bad-bytes', type=str, help='string of bad characters, formatted as \"\\x00\\x0a\" or \"000a\"')
-    parser.add_argument('--aslr', type=int, help='Specify the number of hex characters to disregard for bad bytes in case ASLR is used. Will also convert addresses to format similar to dllbase+0x0000 in q1 and q2 outputs.')
-    parser.add_argument('--dll-name', type=str, help='change the name from dllbase to something else. Useful in case gadgets from multiple dlls are used.')
-    parser.add_argument('--image-base', type=str, help='dllbase used in rp++. Can be calculated with find-imagebase.py. Use in combination with --aslr flag for accurate gadget offsets, ready to copy.')
-
-
 With ASLR, specify the number of bad chars to disregard and the imagebase rp++ used:
 ```
 python3 filter-ropfile.py rpppfile.txt --bad-bytes "\x00\x0a\x0d" --aslr 4 --image-base 10000000
